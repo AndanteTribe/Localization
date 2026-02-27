@@ -138,6 +138,7 @@ var options = MessagePackSerializerOptions.Standard
         LocalizationResolver.Shared,
         MessagePack.Resolvers.StandardResolver.Instance));
 
+LocalizeFormat format = LocalizeFormat.Parse("{1} は {0} です");
 byte[] bytes = MessagePackSerializer.Serialize(format, options);
 LocalizeFormat? deserialized = MessagePackSerializer.Deserialize<LocalizeFormat>(bytes, options);
 ```
