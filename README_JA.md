@@ -63,8 +63,8 @@ using Localization;
 LocalizeFormat greeting = LocalizeFormat.Parse("こんにちは {0}、メッセージが {1:N0} 件あります。");
 
 // 実行時に引数を適用する
-string result = Localize.Format(greeting, "アリス", 42);
-// result == "こんにちは アリス、メッセージが 42 件あります。"
+string result = Localize.Format(greeting, "アリス", 4321);
+// result == "こんにちは アリス、メッセージが 4,321 件あります。"
 ```
 
 ### LocalizedMemberAttribute
@@ -77,10 +77,10 @@ using Localization;
 public class MyLocale
 {
     [LocalizedMember]
-    public LocalizeFormat Greeting { get; set; } = LocalizeFormat.Parse("こんにちは {0}！");
+    public string Greeting { get; set; } = "こんにちは {0}！";
 
     [LocalizedMember]
-    public LocalizeFormat ItemCount { get; set; } = LocalizeFormat.Parse("アイテムが {0:N0} 個あります。");
+    public string ItemCount { get; set; } = "アイテムが {0:N0} 個あります。";
 }
 ```
 

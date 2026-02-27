@@ -63,8 +63,8 @@ using Localization;
 LocalizeFormat greeting = LocalizeFormat.Parse("Hello {0}, you have {1:N0} messages.");
 
 // Apply arguments at runtime
-string result = Localize.Format(greeting, "Alice", 42);
-// result == "Hello Alice, you have 42 messages."
+string result = Localize.Format(greeting, "Alice", 4321);
+// result == "Hello Alice, you have 4,321 messages."
 ```
 
 ### LocalizedMemberAttribute
@@ -77,10 +77,10 @@ using Localization;
 public class MyLocale
 {
     [LocalizedMember]
-    public LocalizeFormat Greeting { get; set; } = LocalizeFormat.Parse("Hello {0}!");
+    public string Greeting { get; set; } = "Hello {0}!";
 
     [LocalizedMember]
-    public LocalizeFormat ItemCount { get; set; } = LocalizeFormat.Parse("You have {0:N0} items.");
+    public string ItemCount { get; set; } = "You have {0:N0} items.";
 }
 ```
 
