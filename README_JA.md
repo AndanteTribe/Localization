@@ -69,7 +69,7 @@ string result = Localize.Format(greeting, "アリス", 4321);
 
 ### LocalizedMemberAttribute
 
-`[LocalizedMember]` を使用して、ローカライズされた書式文字列を保持するフィールドやプロパティに注釈を付けます。
+`[LocalizedMember]` を使用して、ローカライズされた文字列（書式文字列に限らず、ラベルやタイトル、メッセージなど）を保持するフィールドやプロパティに注釈を付けます。
 
 ```csharp
 using Localization;
@@ -77,10 +77,13 @@ using Localization;
 public class MyLocale
 {
     [LocalizedMember]
-    public string Greeting { get; set; } = "こんにちは {0}！";
+    public string AppTitle { get; set; } = "マイアプリケーション";
 
     [LocalizedMember]
-    public string ItemCount { get; set; } = "アイテムが {0:N0} 個あります。";
+    public string SaveButton { get; set; } = "保存";
+
+    [LocalizedMember]
+    public string ErrorMessage { get; set; } = "エラーが発生しました。もう一度お試しください。";
 }
 ```
 

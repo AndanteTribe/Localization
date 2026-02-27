@@ -69,7 +69,7 @@ string result = Localize.Format(greeting, "Alice", 4321);
 
 ### LocalizedMemberAttribute
 
-Use `[LocalizedMember]` to annotate fields or properties that hold localized format strings.
+Use `[LocalizedMember]` to annotate fields or properties that hold localized strings (plain labels, titles, messages — not necessarily format strings).
 
 ```csharp
 using Localization;
@@ -77,10 +77,13 @@ using Localization;
 public class MyLocale
 {
     [LocalizedMember]
-    public string Greeting { get; set; } = "Hello {0}!";
+    public string AppTitle { get; set; } = "My Application";
 
     [LocalizedMember]
-    public string ItemCount { get; set; } = "You have {0:N0} items.";
+    public string SaveButton { get; set; } = "Save";
+
+    [LocalizedMember]
+    public string ErrorMessage { get; set; } = "An error occurred. Please try again.";
 }
 ```
 
