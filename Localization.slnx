@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="tests/Localization.Tests/Localization.Tests.csproj" />
+  <Project Path="src/Localization.MessagePack/Localization.MessagePack.csproj" />
+  <Project Path="src/Localization/Localization.csproj" />
+</Solution>

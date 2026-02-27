@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;net6.0;net7.0</TargetFrameworks>
+        <LangVersion>14</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <OutputType>Library</OutputType>
+        <Version>1.0.0</Version>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <!-- NuGet Packaging -->
+        <PackageId>AndanteTribe.Localization.MessagePack</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>Andante Tribe</Authors>
+        <Company>© Andante Tribe</Company>
+        <Description>Localization utilities with format-aware support and practical implementations for easier integration.</Description>
+        <PackageProjectUrl>https://github.com/AndanteTribe/Localization</PackageProjectUrl>
+        <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Localization\Localization.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MessagePack" Version="3.1.4" />
+    </ItemGroup>
+
+</Project>
