@@ -76,6 +76,51 @@ public class LocalizeFormatTests
         Assert.Equal(1, localizeFormat.Embed.Length);
         Assert.Equal((0, "F2"), localizeFormat.Embed[0]);
     }
+
+    [Fact]
+    public void ToString_WithMultipleFormats_RecreatesCorrectly()
+    {
+        // Arrange
+        var format = "{0:D} {1:X} {2:N2}";
+        var localizeFormat = LocalizeFormat.Parse(format);
+
+        // Act
+        var result = localizeFormat.ToString();
+
+        // Assert
+        Assert.Equal(format, result);
+    }
+
+    [Fact]
+    public void ToString_WithEmptyFormat_RecreatesCorrectly()
+    {
+        // Arrange
+        var format = "{0} {1}";
+        var localizeFormat = LocalizeFormat.Parse(format);
+
+        // Act
+        var result = localizeFormat.ToString();
+
+        // Assert
+        Assert.Equal(format, result);
+    }
+
+    [Fact]
+    public void Parse_WithVeryLongFormatString_WorksCorrectly()
+    {
+        // Arrange
+        var format = "Start: {0:F10}, Middle: {1:N5}, End: {2:E8}";
+
+        // Act
+        var localizeFormat = LocalizeFormat.Parse(format);
+
+        // Assert
+        Assert.Equal(3, localizeFormat.Literal.Length);
+        Assert.Equal(3, localizeFormat.Embed.Length);
+        Assert.Equal((0, "F10"), localizeFormat.Embed[0]);
+        Assert.Equal((1, "N5"), localizeFormat.Embed[1]);
+        Assert.Equal((2, "E8"), localizeFormat.Embed[2]);
+    }
 }
 
 

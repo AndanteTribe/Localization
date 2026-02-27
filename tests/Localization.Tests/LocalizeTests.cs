@@ -183,6 +183,110 @@ public class LocalizeTests
         // Assert
         Assert.Equal("Text: Hello, Number: 42, Date: 12/25", result);
     }
+
+    [Fact]
+    public void Format_SingleArg_WithoutTrailingLiteral_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("Value: {0}");
+
+        // Act
+        var result = Localize.Format(format, "test");
+
+        // Assert
+        Assert.Equal("Value: test", result);
+    }
+
+    [Fact]
+    public void Format_TwoArgs_WithoutTrailingLiteral_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{0} and {1}");
+
+        // Act
+        var result = Localize.Format(format, "A", "B");
+
+        // Assert
+        Assert.Equal("A and B", result);
+    }
+
+    [Fact]
+    public void Format_ThreeArgs_WithoutTrailingLiteral_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{0} {1} {2}");
+
+        // Act
+        var result = Localize.Format(format, "X", "Y", "Z");
+
+        // Assert
+        Assert.Equal("X Y Z", result);
+    }
+
+    [Fact]
+    public void Format_FourArgs_WithoutTrailingLiteral_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{0} {1} {2} {3}");
+
+        // Act
+        var result = Localize.Format(format, "A", "B", "C", "D");
+
+        // Assert
+        Assert.Equal("A B C D", result);
+    }
+
+    [Fact]
+    public void Format_FiveArgs_WithoutTrailingLiteral_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{0} {1} {2} {3} {4}");
+
+        // Act
+        var result = Localize.Format(format, "A", "B", "C", "D", "E");
+
+        // Assert
+        Assert.Equal("A B C D E", result);
+    }
+
+    [Fact]
+    public void Format_ThreeArgs_WithReorderedIndices_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{2} - {1} - {0}");
+
+        // Act
+        var result = Localize.Format(format, "First", "Second", "Third");
+
+        // Assert
+        Assert.Equal("Third - Second - First", result);
+    }
+
+    [Fact]
+    public void Format_FourArgs_WithReorderedIndices_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{3} {2} {1} {0}");
+
+        // Act
+        var result = Localize.Format(format, "D", "C", "B", "A");
+
+        // Assert
+        Assert.Equal("A B C D", result);
+    }
+
+    [Fact]
+    public void Format_FiveArgs_WithReorderedIndices_FormatsCorrectly()
+    {
+        // Arrange
+        var format = LocalizeFormat.Parse("{4} {3} {2} {1} {0}");
+
+        // Act
+        var result = Localize.Format(format, "E", "D", "C", "B", "A");
+
+        // Assert
+        Assert.Equal("A B C D E", result);
+    }
 }
 
 
