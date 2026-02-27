@@ -6,12 +6,12 @@ using Localization.Internal;
 namespace Localization;
 
 /// <summary>
-/// 文字列フォーマットのヘルパー.
+/// String Formatting Helper.
 /// </summary>
 public static class FormatHelper
 {
     /// <summary>
-    /// フォーマット文字列を解析します.
+    /// Parses the format string.
     /// </summary>
     /// <param name="format"></param>
     /// <returns></returns>
@@ -21,7 +21,7 @@ public static class FormatHelper
         [StringSyntax(StringSyntaxAttribute.CompositeFormat)] in string format) => AnalyzeFormat(format.AsSpan());
 
     /// <summary>
-    /// フォーマット文字列を解析します.
+    /// Parses the format string.
     /// </summary>
     /// <param name="format"></param>
     /// <returns></returns>
@@ -50,7 +50,8 @@ public static class FormatHelper
 
                 if (remainder[countUntilNextBrace] == '}')
                 {
-                    throw new FormatException("開き中括弧がありません。");
+                    // 開き中括弧がない.
+                    throw new FormatException($"There is no opening curly brace. format={format}");
                 }
 
                 ArrayPool<string>.Shared.Grow(ref literalsBuffer, literalCount + 1);
@@ -62,7 +63,8 @@ public static class FormatHelper
                 var endBrace = format[pos..].IndexOf('}');
                 if (endBrace < 0)
                 {
-                    throw new FormatException($"閉じ中括弧がありません。format={format}");
+                    // 閉じ中括弧がない.
+                    throw new FormatException($"There is no closing curly brace. format={format}");
                 }
 
                 var inside = format.Slice(pos, endBrace);
@@ -74,7 +76,8 @@ public static class FormatHelper
                 {
                     if (!c.IsAsciiDigit())
                     {
-                        throw new FormatException($"インデックス '{i}' が整数ではありません。");
+                        // インデックス '{i}' が整数ではない.
+                        throw new FormatException($"The index '{i}' is not an integer. format={format}");
                     }
                 }
 

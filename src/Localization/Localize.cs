@@ -3,12 +3,12 @@
 namespace Localization;
 
 /// <summary>
-/// ローカライズ用ユーティリティクラス.
+/// Localization Utility.
 /// </summary>
 public static class Localize
 {
     /// <summary>
-    /// <see cref="LocalizeFormat"/>で指定したフォーマットに埋め込み引数を適用して文字列を生成します.
+    /// Generates a string by applying embedded arguments to the format specified by <see cref="LocalizeFormat"/>.
     /// </summary>
     /// <param name="format"></param>
     /// <param name="arg0"></param>
@@ -33,7 +33,7 @@ public static class Localize
     }
 
     /// <summary>
-    /// <see cref="LocalizeFormat"/>で指定したフォーマットに埋め込み引数を適用して文字列を生成します.
+    /// Generates a string by applying embedded arguments to the format specified by <see cref="LocalizeFormat"/>.
     /// </summary>
     /// <param name="format"></param>
     /// <param name="arg0"></param>
@@ -71,7 +71,7 @@ public static class Localize
     }
 
     /// <summary>
-    /// <see cref="LocalizeFormat"/>で指定したフォーマットに埋め込み引数を適用して文字列を生成します.
+    /// Generates a string by applying embedded arguments to the format specified by <see cref="LocalizeFormat"/>.
     /// </summary>
     /// <param name="format"></param>
     /// <param name="arg0"></param>
@@ -114,7 +114,7 @@ public static class Localize
     }
 
     /// <summary>
-    /// <see cref="LocalizeFormat"/>で指定したフォーマットに埋め込み引数を適用して文字列を生成します.
+    /// Generates a string by applying embedded arguments to the format specified by <see cref="LocalizeFormat"/>.
     /// </summary>
     /// <param name="format"></param>
     /// <param name="arg0"></param>
@@ -162,7 +162,7 @@ public static class Localize
     }
 
     /// <summary>
-    /// <see cref="LocalizeFormat"/>で指定したフォーマットに埋め込み引数を適用して文字列を生成します.
+    /// Generates a string by applying embedded arguments to the format specified by <see cref="LocalizeFormat"/>.
     /// </summary>
     /// <param name="format"></param>
     /// <param name="arg0"></param>

@@ -1,7 +1,7 @@
 ﻿namespace Localization;
 
 /// <summary>
-/// ローカライズ対象メンバーを指定する属性.
+/// Attribute specifying the members to be localized.
 /// </summary>
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class LocalizedMemberAttribute : Attribute

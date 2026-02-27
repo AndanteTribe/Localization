@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 namespace Localization;
 
 /// <summary>
-/// ローカライズ用のフォーマット形式キャッシュ.
+/// Represents a format string for localization. It consists of literal parts and embedded parts (placeholders).
 /// </summary>
 public record LocalizeFormat
 {
@@ -15,12 +15,12 @@ public record LocalizeFormat
     internal readonly int _literalLength;
 
     /// <summary>
-    /// リテラル部分の配列.
+    /// Array of literal parts.
     /// </summary>
     public ReadOnlySpan<string> Literal => _literal.AsSpan();
 
     /// <summary>
-    /// 埋め込み部分の配列.
+    /// Array of embedded parts.
     /// </summary>
     public ReadOnlySpan<(int index, string format)> Embed => _embed.AsSpan();
 
@@ -38,7 +38,7 @@ public record LocalizeFormat
     }
 
     /// <summary>
-    /// フォーマット文字列を解析して<see cref="LocalizeFormat"/>を生成します.
+    /// Parses the format string and generates a <see cref="LocalizeFormat"/> instance.
     /// </summary>
     /// <param name="format"></param>
     /// <returns></returns>
@@ -46,7 +46,7 @@ public record LocalizeFormat
     public static LocalizeFormat Parse([StringSyntax(StringSyntaxAttribute.CompositeFormat)] in string format) => Parse(format.AsSpan());
 
     /// <summary>
-    /// フォーマット文字列を解析して<see cref="LocalizeFormat"/>を生成します.
+    /// Parses the format string and generates a <see cref="LocalizeFormat"/> instance.
     /// </summary>
     /// <param name="format"></param>
     /// <returns></returns>

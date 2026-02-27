@@ -9,7 +9,7 @@ namespace Localization.MessagePack;
 public sealed class LocalizationResolver : IFormatterResolver
 {
     /// <summary>
-    /// <see cref="LocalizationResolver"/>の共有インスタンス.
+    /// SShare instance of <see cref="LocalizationResolver"/>.
     /// </summary>
     public static readonly IFormatterResolver Shared = new LocalizationResolver();
 
