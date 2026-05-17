@@ -1,4 +1,4 @@
-﻿namespace Localization;
+namespace Localization;
 
 /// <summary>
 /// Attribute specifying the members to be localized.

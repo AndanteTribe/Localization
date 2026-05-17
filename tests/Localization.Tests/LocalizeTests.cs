@@ -288,7 +288,3 @@ public class LocalizeTests
         Assert.Equal("A B C D E", result);
     }
 }
-
-
-
-

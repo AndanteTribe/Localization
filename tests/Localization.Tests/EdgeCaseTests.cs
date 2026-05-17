@@ -179,7 +179,3 @@ public class EdgeCaseTests
         Assert.Equal(originalFormat, result);
     }
 }
-
-
-
-

@@ -34,6 +34,3 @@ public class LocalizedMemberAttributeTests
         public string LocalizedText = "Test";
     }
 }
-
-
-
