@@ -167,6 +167,3 @@ public class FormatHelperTests
         Assert.Equal((0, "yyyy-MM-dd HH:mm:ss"), embeds[0]);
     }
 }
-
-
-

@@ -1,4 +1,4 @@
-﻿using MessagePack;
+using MessagePack;
 using MessagePack.Formatters;
 using IMessagePackFormatter = MessagePack.Formatters.IMessagePackFormatter<Localization.LocalizeFormat?>;
 

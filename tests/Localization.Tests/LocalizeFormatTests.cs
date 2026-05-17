@@ -122,6 +122,3 @@ public class LocalizeFormatTests
         Assert.Equal((2, "E8"), localizeFormat.Embed[2]);
     }
 }
-
-
-
